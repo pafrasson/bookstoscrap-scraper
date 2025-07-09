@@ -1,7 +1,10 @@
-from scraper.browser import start_browser
-from scraper.listing import collect_book_links
-from scraper.details import extract_book_data
-from scraper.exporter import save_to_csv
+from src.scraper.browser import start_browser
+from src.scraper.listing import collect_book_links
+from src.scraper.details import extract_book_data
+from src.scraper.exporter import save_to_csv
+from src.logger import setup_logger
+
+logger = setup_logger(__name__)
 
 
 def run_scraper():
@@ -14,11 +17,11 @@ def run_scraper():
     try:
         page.goto("http://books.toscrape.com/")
         links = collect_book_links(page)
-        print(f"[INFO] Total de livros encontrados: {len(links)}")
+        logger.info(f"Total de livros encontrados: {len(links)}")
 
         results = [data for data in map(lambda url: extract_book_data(page, url), links) if data]
         save_to_csv(results)
-        print(f"[INFO] Dados salvos com sucesso.")
+        logger.info("Dados salvos com sucesso.")
     finally:
         context.close()
         browser.close()

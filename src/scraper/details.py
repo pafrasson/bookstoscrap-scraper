@@ -1,3 +1,8 @@
+from src.logger import setup_logger
+
+logger = setup_logger(__name__)
+
+
 def extract_book_data(page, url):
     """
     Extracts book data from book page
@@ -27,5 +32,5 @@ def extract_book_data(page, url):
         }
 
     except Exception as e:
-        print(f"[ERRO] Falha ao processar {url}: {e}")
+        logger.error(f"[ERRO] Falha ao processar {url}: {e}")
         return None
