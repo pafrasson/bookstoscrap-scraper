@@ -2,7 +2,7 @@ from src.scraper.browser import start_browser
 from src.scraper.listing import collect_book_links
 from src.scraper.details import extract_book_data
 from src.scraper.exporter import save_to_csv
-from src.logger import setup_logger
+from src.logger.logger import setup_logger
 
 logger = setup_logger(__name__)
 
