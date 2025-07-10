@@ -13,24 +13,9 @@ Um projeto de web scraping usando **Playwright (Python)** para extrair informaç
   - Preço (sem e com taxa)
   - Taxa
   - Disponibilidade
+  - Rating
   - URL da página
 - Salva tudo em um arquivo `books.csv`.
-
----
-
-## 🗂 Estrutura do Projeto
-
-```
-src/
-├── main.py                # Ponto de entrada do projeto
-├── scraper/
-│   ├── __init__.py
-│   ├── runner.py          # Coordena todo o processo de scraping
-│   ├── browser.py         # Inicializa o navegador com Playwright
-│   ├── listing.py         # Coleta os links de todos os livros
-│   ├── details.py         # Extrai os dados de cada livro
-│   └── exporter.py        # Salva os dados no arquivo CSV
-```
 
 ---
 
