@@ -11,7 +11,7 @@ def setup_logger(name: str) -> logging.Logger:
         ch.setLevel(logging.INFO)
 
         # File handler
-        fh = logging.FileHandler("scraper.log", encoding='utf-8')
+        fh = logging.FileHandler("logger/scraper.log", encoding='utf-8')
         fh.setLevel(logging.DEBUG)
 
         # Formatter

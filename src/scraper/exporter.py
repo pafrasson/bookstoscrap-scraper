@@ -1,7 +1,7 @@
 import csv
 
 
-def save_to_csv(data, filename="books.csv"):
+def save_to_csv(data, filename="public/books.csv"):
     """
     Writes book to a csv file
     :param data:
@@ -11,7 +11,7 @@ def save_to_csv(data, filename="books.csv"):
     with open(filename, mode="w", newline="", encoding="utf-8") as file:
         writer = csv.DictWriter(file, fieldnames=[
             "title", "product_type", "price_excl_tax",
-            "price_incl_tax", "tax", "availability", "rating","url"
+            "price_incl_tax", "tax", "availability", "rating", "url"
         ])
         writer.writeheader()
         writer.writerows(data)
